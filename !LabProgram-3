@@ -6,7 +6,7 @@ int main()
     int units, mincharge=100;
     const double slab1=0.80,slab2=0.90,slab3=1.00,surcharge=0.15;
     double billamt=0.0;
-    printf("Enter the name of the user: ");
+    printf("Enter the name of the consumer: ");
     scanf("%s", &name);
     printf("Enter the number of units consumed: ");
     scanf("%d", &units);
