@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char name[10];
+    int units, mincharge=100;
+    const double slab1=0.80,slab2=0.90,slab3=1.00,surcharge=0.15;
+    double billamt=0.0;
+    printf("Enter the name of the user: ");
+    scanf("%s", &name);
+    printf("Enter the number of units consumed: ");
+    scanf("%d", &units);
+    billamt+=mincharge;
+    if(units<=200)
+    {
+        billamt=billamt+units*slab1;
+    }
+    else if(units>200&&units<=300)
+    {
+        billamt=billamt+(200*slab1)+((units-200)*slab2);
+    }
+    else
+    {
+        billamt=billamt+(200*slab1)+((100*slab2)+(units-300)*slab3);
+    }
+    if(billamt>400)
+    {
+        billamt=billamt+(billamt*surcharge);
+    }
+    printf("Consumer name=%s\n",name);
+    printf("Units consumed=%d\n",units);
+    printf("Bill amount=%f Rupees\n",billamt);
+    return(0);
+}
