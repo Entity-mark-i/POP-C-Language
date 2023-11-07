@@ -1,0 +1,17 @@
+#include <stdio.h>
+int fact(int);
+int main()
+{
+    int a;
+    printf("Factorial of integer? ");
+    scanf("%d",&a);
+    if(a<0) printf("Factorial of a negative number does not exist.");
+    else printf("%d! = %d",a,fact(a));
+    return(0);
+}
+int fact(int a)
+{
+    int i,r=1;
+    for(i=1;i<=a;i++) r*=i;
+    return r;
+}
